@@ -1,0 +1,38 @@
+\section{Dependent Variables}
+
+\begin{center}
+ \begin{tabular}{c c || c | c || c}
+ \multicolumn{2}{c}{\multirow{2}{*}{\textbf{System A}}} & \multicolumn{2}{c}{\textbf{light}} & {}\\
+\multicolumn{2}{c}{} & \texttt{sunny} & \texttt{overcast} & sum \\ [0.5ex]
+ \hline\hline
+\multirow{2}{*}{\textbf{precipitation}} & \texttt{wet} & 0.005 & 0.095 & 0.1 \\
+ \cline{2-5}
+ & \texttt{dry} & 0.495 & 0.405 & 0.9 \\
+ \hline\hline
+  {} & sum & 0.5 & 0.5 & 1 \\ [1ex]
+\end{tabular}
+\end{center}
+
+
+\begin{align*}
+P(\texttt{sunny} | \texttt{wet}) &= 0.05 \\
+P(\texttt{overcast} | \texttt{wet}) &= 0.95 \\
+P(\texttt{sunny} | \texttt{dry}) &= 0.55 \\
+P(\texttt{overcast} | \texttt{dry}) &= 0.45 \\
+P(\texttt{wet} | \texttt{sunny}) &= 0.01 \\
+P(\texttt{dry} | \texttt{sunny}) &= 0.99 \\
+P(\texttt{wet} | \texttt{overcast}) &= 0.19 \\
+P(\texttt{dry} | \texttt{overcast}) &= 0.81
+\end{align*}
+
+
+\begin{center}
+
+  \begin{tabular}{c | c | c | c || c}
+   \multicolumn{4}{c}{\textbf{System A}} & {}\\
+   sunny and wet & sunny and dry & overcast and wet & overcast and dry & sum \\ [0.5ex]
+  \hline\hline
+   0.05 & 0.45 & 0.05 & 0.45 & 1 \\ [1ex]
+ \end{tabular}
+
+\end{center}

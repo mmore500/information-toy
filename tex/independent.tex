@@ -1,137 +1,102 @@
-\section{Independent Variables}
+\section{Independent Random Variables}
 
-\includegraphics[width=0.3\textwidth]{img/grey-coin-grey-die}
-\includegraphics[width=0.3\textwidth]{img/grey-coin-red-die}
-\includegraphics[width=0.3\textwidth]{img/red-coin-grey-die}
-\includegraphics[width=0.3\textwidth]{img/red-coin-red-die}
+But, wait!
+There's more fun to be had with the coin and the die.
+Let's take our two boxes and screw them together.
+\begin{center}
+\includegraphics[width=0.4\textwidth]{img/box-both-open-coin-die}
+\end{center}
+As before, let's close both lids and give the big box a shake.
+\begin{center}
+\includegraphics[width=\textwidth]{img/both-box-closed-portal}
+\end{center}
+We will model the big box as a single random variable $\bm{A}$.
+Now, there are four possible states that our big box could be in.
+Both the coin and the die could be red side up or grey side up.
+The possible states of the big box are summarized below.
+\begin{center}
+ \begin{tabular}{c c || c | c }
+ \multicolumn{2}{c}{\multirow{2}{*}{$\bm{A}$}} & \multicolumn{2}{c}{\textbf{coin}} \\
+\multicolumn{2}{c}{} & red & grey \\ [0.5ex]
+ \hline\hline
+\multirow{14}{*}{\textbf{die}} & red
+& \makecell{
+  \includegraphics[trim= 0 0 0 -20ex, clip, width=0.3\textwidth]{img/red-coin-red-die} \\
+  $\bm{A} = \text{``red coin, red die''}$
+  }
+ & \makecell{
+  \includegraphics[trim= 0 0 0 -20ex, clip, width=0.3\textwidth]{img/grey-coin-red-die} \\
+  $\bm{A} = \text{``grey coin, red die''}$
+  }
+  \\
+ \cline{2-4}
+ & grey
+ & \makecell{
+ \includegraphics[trim= 0 0 0 -20ex, clip, width=0.3\textwidth]{img/red-coin-grey-die} \\
+  $\bm{A} = \text{``red coin, grey die''}$}
+ & \makecell{
+ \includegraphics[trim= 0 0 0 -20ex, clip, width=0.3\textwidth]{img/grey-coin-grey-die} \\ $\bm{A} = \text{``grey coin, grey die''}$}
+\end{tabular}
+\end{center}
 
+Because the die and the coin are independent, it is straightforward to calculate the probability of each of the four possible states of the big box.
+For example, to compute the probability that the die and the coin are both grey side up we calculate,
+\begin{align*}
+p_{\bm{A} = \text{``grey coin, grey die''}}
+&= p_{\bm{C} = \text{grey}} \times p_{\bm{D} = \text{grey}} \\
+&= 0.5 \times 0.9 \\
+&= 0.45.
+\end{align*}
+The probabilities of all four possible states of the big box are summarized below.
 \begin{center}
  \begin{tabular}{c c || c | c || c}
- \multicolumn{2}{c}{\multirow{2}{*}{\textbf{System B}}} & \multicolumn{2}{c}{\textbf{coin}} & {}\\
-\multicolumn{2}{c}{} & heads & tails & sum \\ [0.5ex]
+ \multicolumn{2}{c}{\multirow{2}{*}{\textbf{System A}}} & \multicolumn{2}{c}{\textbf{coin}} & {}\\
+\multicolumn{2}{c}{} & red & grey & sum \\ [0.5ex]
  \hline\hline
-\multirow{2}{*}{\textbf{precipitation}} & wet & 0.05 & 0.05 & 0.1 \\
+\multirow{2}{*}{\textbf{die}} & red & 0.05 & 0.05 & 0.1 \\
  \cline{2-5}
- & dry & 0.45 & 0.45 & 0.9 \\
+ & grey & 0.45 & 0.45 & 0.9 \\
  \hline\hline
   {} & sum & 0.5 & 0.5 & 1 \\ [1ex]
 \end{tabular}
 \end{center}
 
+Now that we know the probabilities for all the possible outcomes of $\bm{A}$, we can calculate the entropy associated with the the closed box.
+\begin{align*}
+S_{\text{big box}}
+&=
+H(\bm{A}) \\
+&=
+- 0.05 \times \log_2(0.05)
++ - 0.05 \times \log_2(0.05)
+- 0.45 \times \log_2(0.45)
++ - 0.45 \times \log_2(0.45) \\
+\approx 1.469
+\end{align*}
+
+Let's take a moment to notice,
+\begin{align*}
+S_{\text{big box}}
+&=
+S_{\text{die}} + S_{\text{coin}}.
+\end{align*}
+
+Intuitively, it makes sense that the entropy associated with the big box is the same as the sum of the entropy associated with the die box and the entropy associated with the coin box.
+This relation holds true because the coin and the die are independent.
+Intuitively speaking, the coin and the die are independent because knowing the state of the coin doesn't the probability of outcomes from the die and vice versa.
 \begin{center}
 
-  \begin{tabular}{c | c | c | c || c}
-   \multicolumn{4}{c}{\textbf{System B}} & {}\\
-   heads and wet & heads and dry & tails and wet & tails and dry & sum \\ [0.5ex]
-  \hline\hline
-   0.05 & 0.45 & 0.05 & 0.45 & 1 \\ [1ex]
- \end{tabular}
-
+\includegraphics[width=0.3\textwidth]{img/left-box-closed-portal-die}
+\includegraphics[trim= 0 -200ex 0 0, clip,width=0.4\textwidth]{img/right-box-closed-portal-coin}
 \end{center}
-
-
+The coin still has the same probability of taking on the red state or grey state given we know the state of the die.
+The die still has the same probability of taking on the red state or grey state given we know the state of the coin.
+Mathematically,
 \begin{align*}
-P(\texttt{heads} | \texttt{wet}) &= P(\texttt{heads}) = 0.5 \\
-P(\texttt{tails} | \texttt{wet}) &= P(\texttt{tails}) = 0.5 \\
-P(\texttt{heads} | \texttt{dry}) &= P(\texttt{heads}) = 0.5 \\
-P(\texttt{tails} | \texttt{dry}) &= P(\texttt{tails}) = 0.5 \\
-P(\texttt{wet} | \texttt{heads}) &= P(\texttt{wet}) = 0.1 \\
-P(\texttt{dry} | \texttt{heads}) &= P(\texttt{dry}) = 0.9 \\
-P(\texttt{wet} | \texttt{tails}) &= P(\texttt{wet}) = 0.1 \\
-P(\texttt{dry} | \texttt{tails}) &= P(\texttt{dry}) = 0.9
+P(\bm{C}) &= P(\bm{C} | \bm{D}) \\
+P(\bm{D}) &= P(\bm{D} | \bm{C}) .
 \end{align*}
+For those unfamiliar, the vertical bar is read as ``given.''
 
-\begin{align*}
-H(\textbf{precipitation})
-= - 0.9 \times \log_2(0.9)
-+ - 0.1 \times \log_2(0.1)
-\approx 0.469
-\end{align*}
-
-\begin{align*}
-H(\textbf{light}) = 1
-\end{align*}
-
-\begin{align*}
-H(\textbf{system A})
-= - 0.005 \times \log_2(0.005)
-+ - 0.095 \times \log_2(0.095)
-+ - 0.495 \times \log_2(0.495)
-+ - 0.405 \times \log_2(0.405)
-\approx 1.391
-\end{align*}
-
-\begin{align*}
-H(\textbf{light} | \textbf{precipitation})
-+ P(\texttt{wet}) \times H(\textbf{light} | \texttt{wet})
-+ P(\texttt{dry}) \times H(\textbf{light} | \texttt{dry})
-= 0.1 \times [ - 0.05 \times \log_2(0.05) + - 0.95 \times \log_2(0.95) ]
-+ 0.9 \times [ - 0.55 \times \log_2(0.55) + - 0.45 \times \log_2(0.45) ]
-\approx 0.922
-\end{align*}
-
-\begin{align*}
-I(\textbf{light} : \textbf{precipitation})
-= H(\textbf{light}) - H(\textbf{light} | \textbf{precipitation})
-\approx 1 - 0.922
-\approx 0.078
-\end{align*}
-
-\begin{align*}
-H(\textbf{precipitation} | \textbf{light})
-= P(\texttt{overcast}) \times H(\textbf{precipitation} | \texttt{overcast})
-+ P(\texttt{sunny}) \times H(\textbf{precipitation} | \texttt{sunny})
-= 0.5 \times [ - 0.19 \times \log_2(0.19) + - 0.81 \times \log_2(0.81) ]
-+ 0.5 \times [ - 0.01 \times \log_2(0.01) + - 0.99 \times \log_2(0.99) ]
-\approx 0.391
-\end{align*}
-
-\begin{align*}
-I(\textbf{precipitation} : \textbf{light})
-= H(\textbf{precipitation}) - H(\textbf{precipitation} | \textbf{light})
-\approx 0.469 - 0.391
-\approx 0.078
-\end{align*}
-
-$0.78 \approx 0.78$,
-so
-\begin{align*}
-I(\textbf{light} : \textbf{precipitation}) = I(\textbf{precipitation} : \textbf{light})
-\end{align*}
-
-note also,
-\begin{align*}
-H(\textbf{precipitation}) + H(\textbf{light}) - I(\textbf{light} : \textbf{precipitation})
-= H(`System A`)
-\end{align*}
-
-
-% |       | \texttt{sunny}    | \texttt{overcast}  |          |
-% | ----- | -------- | -------- | -------- |
-% | \texttt{wet} | 0.05     | 0.05     | sum: 0.1 |
-% | \texttt{dry} | 0.45     | 0.45     | sum: 0.9 |
-% |       | sum: 0.5 | sum: 0.5 |          |
-%
-% H(`weather`)
-% = - 0.05 \times \log_2(0.05)
-% + - 0.05 \times \log_2(0.05)
-% + - 0.45 \times \log_2(0.45)
-% + - 0.45 \times \log_2(0.45)
-% = - 0.1 \times \log_2(0.05)
-% + - 0.9 \times \log_2(0.45)
-% \approx 1.469
-%
-% H(\textbf{light}) + H(\textbf{precipitation})
-% \approx 1 + 0.469
-% \approx 1.469
-% \approx H(`weather`)
-%
-% In this case,
-% I(\textbf{precipitation} : \textbf{light})
-% = I(\textbf{light} : \textbf{precipitation}) = 0.
-
-
-\includegraphics[width=0.3\textwidth]{img/both-box-closed-portal} \\
-\includegraphics[width=0.3\textwidth]{img/left-box-closed-portal-die} \\
-\includegraphics[width=0.3\textwidth]{img/right-box-closed-portal-coin} \\
-\includegraphics[width=0.3\textwidth]{img/box-both-open-coin-die}
+In the next section, we'll look at entropy and information in a situation where independence \textit{doesn't} hold.
+This is where things get a little more interesting.

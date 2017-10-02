@@ -16,10 +16,10 @@ Both the coin and the die could be red side up or grey side up.
 The possible states of the big box are summarized below.
 \begin{center}
  \begin{tabular}{c c || c | c }
- \multicolumn{2}{c}{\multirow{2}{*}{$\bm{A}$}} & \multicolumn{2}{c}{\textbf{coin}} \\
+ \multicolumn{2}{c}{\multirow{2}{*}{$\bm{A}$}} & \multicolumn{2}{c}{$\bm{C}$} \\
 \multicolumn{2}{c}{} & red & grey \\ [0.5ex]
  \hline\hline
-\multirow{14}{*}{\textbf{die}} & red
+\multirow{14}{*}{$\bm{D}$} & red
 & \makecell{
   \includegraphics[trim= 0 0 0 -20ex, clip, width=0.3\textwidth]{img/red-coin-red-die} \\
   $\bm{A} = \text{``red coin, red die''}$
@@ -50,10 +50,10 @@ p_{\bm{A} = \text{``grey coin, grey die''}}
 The probabilities of all four possible states of the big box are summarized below.
 \begin{center}
  \begin{tabular}{c c || c | c || c}
- \multicolumn{2}{c}{\multirow{2}{*}{\textbf{System A}}} & \multicolumn{2}{c}{\textbf{coin}} & {}\\
+ \multicolumn{2}{c}{\multirow{2}{*}{$\bm{A}$}} & \multicolumn{2}{c}{$\bm{C}$} & {}\\
 \multicolumn{2}{c}{} & red & grey & sum \\ [0.5ex]
  \hline\hline
-\multirow{2}{*}{\textbf{die}} & red & 0.05 & 0.05 & 0.1 \\
+\multirow{2}{*}{$\bm{D}$} & red & 0.05 & 0.05 & 0.1 \\
  \cline{2-5}
  & grey & 0.45 & 0.45 & 0.9 \\
  \hline\hline
@@ -85,7 +85,6 @@ Intuitively, it makes sense that the entropy associated with the big box is the 
 This relation holds true because the coin and the die are independent.
 Intuitively speaking, the coin and the die are independent because knowing the state of the coin doesn't the probability of outcomes from the die and vice versa.
 \begin{center}
-
 \includegraphics[width=0.3\textwidth]{img/left-box-closed-portal-die}
 \includegraphics[trim= 0 -200ex 0 0, clip,width=0.4\textwidth]{img/right-box-closed-portal-coin}
 \end{center}

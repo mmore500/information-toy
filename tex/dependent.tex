@@ -186,18 +186,23 @@ How can our uncertainty about the weather as an entire system be less than our u
 The answer is that some entropy is shared between $\bm{L}$ and $\bm{P}$.
 The situation looks like this.
 \begin{center}
-  \includegraphics[trim= 0 0 0 0, clip, width=0.8\textwidth]{img/venn}
+  \includegraphics[trim= 0 0 0 0, clip, width=0.6\textwidth]{img/venn}
 \end{center}
 The green silver in the middle of this venn diagram is the entropy shared between $\bm{L}$ and $\bm{P}$.
 I denoted that sliver $I( \bm{L} : \bm{P})$.
 (Shared entropy is symmetric, so it would be just as valid to denote it $I( \bm{P} : \bm{L})$).
 In total, the shaded area represents the entropy of the entire system $H(\bm{W})$.
+If we stepped out the door to observe the state of the weather all at once, all of that entropy would go away.
+\begin{center}
+  \includegraphics[trim= 0 0 0 0, clip, width=0.9\textwidth]{img/mystery-door-peek}
+\end{center}
+
 
 This idea of sharing entropy has an interesting implication.
 Say we had a rain meter that tells us the precipitation conditions.
 Knowing the precipitation conditions removes all the blue uncertainty ($H(\bm{P})$) from our diagram, taking some of the yellow uncertainty ($H(\bm{L})$) with it.
 \begin{center}
-TODO
+  \includegraphics[trim= 0 0 0 0, clip, width=0.9\textwidth]{img/rain-meter-peek}
 \end{center}
 Thus, we would expect our uncertainty about light conditions to be reduced by knowing the precipitation conditions.
 This is indeed the case.
@@ -259,7 +264,7 @@ The reverse holds true, as well.
 Our uncertainty about light conditions is reduced by knowing the precipitation conditions.
 Checking our light meter (instead of the rain meter) removes all the yellow uncertainty ($H(\bm{L})$) from our diagram, taking some of the blue uncertainty ($H(\bm{P})$) with it.
 \begin{center}
-TODO
+  \includegraphics[trim= 0 0 0 0, clip, width=0.9\textwidth]{img/sun-meter-peek}
 \end{center}
 Similar calculations give the expected entropy of $\bm{P}$ given observation of $\bm{L}$,
 \begin{align*}

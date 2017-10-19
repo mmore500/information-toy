@@ -62,7 +62,9 @@ S_{\text{coin}}
 &= 1.
 \end{align*}
 We used the base two logarithm to perform this calculation, so the unit that describes our entropy value is the ``bit.''
-For consistency's sake, we will use this unit for all the rest of the calculations we perform as well.
+(For those unfamiliar, bit refers to a binary value, one that may only take one of two possible states: a one or a zero.
+The bit is the appropriate unit for the entropy value because the base of our logarithm matches the number of possible states of a bit.)
+For consistency's sake, we will use the base two logarithm and the bit unit for all the rest of the calculations we perform.
 Thus, we say that the coin closed in the box has one bit of entropy.
 
 Now, let's open the box and observe the state of the coin.
@@ -107,7 +109,16 @@ We close the box and give it a shake.
 We're no longer certain which color is facing up.
 As before with the coin, we're faced with uncertainty.
 This raises a key question: are we more uncertain about the color facing up of the die than about the color facing up of the coin?
-We can use Shannon's equation (\ref{eqn:shannon}) to answer this question.
+
+Let's think through it.
+Observing both the coin and the die, we recognize two outcomes: red side up or grey side up.
+The difference is that for the coin, these outcomes have equal probability.
+For the die, it is more likely that we will observe the grey outcome.
+Thus, we can make a better guess as to what outcome we will observe on the grey die than we can for the coin.
+If we always guess grey on the die, we will be correct much more often than if we always guessed grey on the coin.
+So, we would expect that there is more uncertainty associated with the coin than with the die.
+
+We can use Shannon's equation (\ref{eqn:shannon}) to formally determine whether the flipped coin or rolled die has more entropy.
 We will calculate the entropy of the die in the box and then compare it with the entropy of the coin in the box.
 Plugging and chugging with Equation \ref{eqn:shannon}, we calculate
 \begin{align*}
@@ -118,11 +129,3 @@ S_{\text{die}}
 \end{align*}
 The die in the box has approximately 0.469 bits of entropy.
 It follows that when we open the box with the die in it (and entropy returns to zero), we gain 0.469 bits of information.
-
-So, why was more entropy associated with the coin?
-Observing both the coin and the die, we recognize two outcomes: red side up or grey side up.
-The difference is that for the coin, these outcomes have equal probability.
-For the die, it is more likely that we will observe the grey outcome.
-Thus, we can make a better guess as to what outcome we will observe on the grey die than we can for the coin.
-If we always guess grey on the die, we will be correct much more often than if we always guessed grey on the coin.
-So, we say that there is more uncertainty associated with the coin than with the die.
